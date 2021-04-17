@@ -20,6 +20,7 @@ main{
     height: 100%;
     width: 250px;
     float: left;
+    overflow-y: auto;
 }
 
 #add-playlist{
@@ -30,19 +31,31 @@ main{
     font-size: 1.5rem;
 }
 #playlist{
-    height: 200px;
+    height: calc(100vh - 460px);
+    min-height: 200px;
+    overflow-y: auto;
+}
+#user{
+}
+#download_app{
+    border-bottom: 1px solid white;
 }
 
-#download_app{
-    width: 100%;
+li{
+    style
 }
 
 #download_app img{
     width: 15px;
 } 
 
-#user_menu{
+#user_menu img{
+    width: 25px;
+    background-color: grey;
+    border-radius: 50%;
+    height: 25px;
 }
+
 /* Main Content rules */
 #main_content{
     width: calc(100% - 250px);
@@ -51,16 +64,56 @@ main{
     float: left;
 }
 
-#songs{
-    height: calc(100vh - 140px);
-    margin-top: 70px;
-}
 #barra{
     width: calc(100% - 250px);
     margin-left: 250px;
     height: 70px;
     background-color: rgba(8, 11, 18, 0.6);
     z-index: 2;
+}
+
+#barra a{
+    border: 1px solid white;
+}
+
+
+#songs{
+    height: calc(100vh - 140px);
+    margin-top: 70px;
+}
+
+#songs ul a{
+    text-transform: uppercase;
+}
+
+.album img{
+    width: 100%;
+}
+
+.album{
+    max-width: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.play_hover{
+    transition: .5s;
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: white;
+}
+
+.album:hover img{
+    transition: .5s;
+    filter: brightness(20%)
+}
+
+.album:hover .play_hover{
+    opacity: 1;
 }
 
 .nav-link img{
@@ -79,4 +132,139 @@ main{
     height: 70px;
     background-color: #282828;
     z-index: 1;
+}
+#player_left{
+    width: 20%;
+}
+
+#player_left img{
+    width: 40px;
+    height: auto;
+    object-fit: scale-down;
+}
+
+#player_main{
+    width: 50%;
+}
+
+#player_bar{
+    height: 5px;
+    width: 70%;
+    border-radius: 10px;
+    position: relative;
+}
+
+
+#progress_bar{
+    height: 5px;
+    width: 20%;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+}
+#progress_ball{
+    display: none;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    position: absolute;
+    right:0;
+    top: -5px
+}
+#player_bar:hover, #volume_bar:hover{
+    cursor: pointer;
+}
+#player_bar:hover #progress_bar, #volume_bar:hover #progress_bar{
+    background-color: lawngreen!important;
+}
+#player_bar:hover #progress_ball, #volume_bar:hover #progress_ball{
+    display: block;
+}
+
+#player_main i {
+    color: white;
+/*     font-size: 1.2rem;
+ */    padding: 0 10px
+}
+
+#player_main #player_play{
+    font-size: 2rem;
+}
+
+#player_right{
+    width: 20%;
+}
+ #right_buttons{
+    width: 50%;
+ }
+
+#volume_bar{
+    height: 5px;
+    width: 40%;
+    border-radius: 10px;
+    position: relative;
+    min-width: 60px;
+}
+
+/* LG */
+@media screen and (min-width: 992px){
+    .album{
+        width: calc(100% / 6);
+        text-align: center;
+    }
+
+    #album-list{
+        flex-wrap: nowrap;
+    }
+}
+
+
+/* MD */
+@media screen and (min-width: 768px) and (max-width: 991.98px){
+    .album{
+        width: calc((100% - 40px) / 4);
+    }
+    #album-list{
+        flex-wrap: wrap;
+        justify-content:start!important;
+    }
+}
+
+/* SM */
+@media screen and (min-width: 576px) and (max-width: 767.98px){
+    .album{
+        width: calc((100% - 20px)/ 2);
+    }
+
+    #album-list{
+        flex-wrap: wrap;
+    }
+}
+
+/* XS */
+@media screen and (max-width: 575.98px){
+    #main_content{
+        width: calc(100% - 50px);
+    }
+
+    #sidebar{
+        width: 50px;
+    }
+    #barra{
+        width: calc(100% - 50px);
+        margin-left: 50px;
+    }
+
+    #logo_big{
+        display: none;
+    }
+
+    .album{
+        width: calc((100% - 20px)/ 2);
+    }
+
+    #album-list{
+        flex-wrap: wrap;
+    }
 }
