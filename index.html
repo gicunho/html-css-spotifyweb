@@ -21,38 +21,45 @@
     <title>Spotify</title>
   </head>
   <body>
+      <!-- Stopify App -->
       <div id="wrapper" >
           <main class="">
-                <div id="sidebar" class="p-2 bg-black d-flex flex-column justify-content-between">
+                <!-- Sidebar -->
+                <div id="sidebar" class="p-3 bg-black d-flex flex-column justify-content-between">
                     <nav id="main_nav" class="">
-                        <div id="logo_big" class="p-3">
+                        <div id="logo_big" class="px-3 pb-4">
                             <a class="navbar-brand " href="#">
                                 <img src="./assets/img/logo.svg" alt="logo spotify" width="150" height="auto">
                             </a>
                         </div>
-                            
+                        <div id="logo_small" class="ps-3 mb-3">
+                            <a class="navbar-brand " href="#">
+                                <img src="./assets/img/logo-small.svg" alt="logo spotify" width="150" height="auto">
+                            </a>
+                        </div>
+                               
                         <a class="nav-link text-white py-1" href="#">
                             <img class="text-white-50" src="./assets/img/home.svg" alt="casetta per tornare home">
-                            Home
+                            <span>Home</span>
                         </a>
                         
                         <a class="nav-link text-white-50 py-1" href="#">
                             <img class="" src="./assets/img/search.svg" alt="lente ingrandimento per ricerca">
-                            Cerca
+                            <span>Cerca</span>
                         </a>
 
                         <a class="nav-link text-white-50 py-1" href="#">
                             <img class="" src="./assets/img/libreria.svg" alt="libreria">
-                            La tua libreria
+                            <span>La tua libreria</span>
                         </a>
-                        <h5 class="text-white ps-3 pt-4 text-uppercase">playlist</h5>
+                        <span><h5 class="text-white ps-3 pt-4 text-uppercase">playlist</h5></span> 
                         <a class="nav-link text-white-50 py-1 align-middle fs-5" href="#">
                             <div id="add-playlist" class="d-inline-block text-center align-middle me-2">
                                 <i class="fas fa-plus    "></i>
                             </div>
-                            Crea Playlist
+                            <span class="d-inline-block">Crea Playlist</span>
                         </a>
-                        <ul id="playlist" class="nav align-items-start">
+                        <ul id="playlist" class="align-items-start">
                             <li><a class="nav-link text-white-50" href="#">Playlist Name</a></li>
                             <li><a class="nav-link text-white-50" href="#">Playlist Name</a></li>
                             <li><a class="nav-link text-white-50" href="#">Playlist Name</a></li>
@@ -67,25 +74,29 @@
 
 
                     <div id="user" class="mx-3 bg-black">
-                        <div id="download_app" >
-                            <a  class="nav-link ps-0 text-white-50" href="#">
+                        <div id="download_app" class="d-flex align-items-center pb-2">
                                 <img class="text-white-50" src="./assets/img/download.svg" alt="simbolo download">
-                                Installa app
-                            </a>
+                                <span class="text-white-50 ps-2">Installa app</span>
                         </div>
-                        <div id="user_menu" class="py-2">
+                        <div id="user_menu" class="pt-2 d-flex">
                             <img src="./assets/img/profile.svg" alt="">
-                            <h5 class="text-white d-inline-block">John Doe</h5>
+                            <span><h5 class="text-white d-inline-block ps-2">John Doe</h5></span> 
                         </div>
                     </div>
                     
                 </div>
+                <!-- /Sidebar -->
 
+                <!-- Main Content -->
                 <div id="main_content" class="overflow-auto">
                     <div id="barra" class="fixed-top d-flex justify-content-end align-items-center">
                         <a class="nav-link text-white text-uppercase rounded-pill px-5 me-4" aria-current="page" href="#">Effettua L'upgrade</a>
                     </div>
+
+                    <!-- Songs Menu -->
                     <div id="songs" class="p-4">
+
+                        <!-- Songs Navbar -->
                         <ul class="nav justify-content-center">
                             <li class="nav-item">
                               <a class="nav-link text-white-50" href="#">in evidenza</a>
@@ -106,6 +117,9 @@
                                 <a class="nav-link text-white-50" href="#">scopri</a>
                               </li>
                         </ul>
+                        <!-- /Songs Navbar -->
+
+                        <!-- Recently Played -->
                         <h2 class="text-white py-3">Recently played</h2>
                         <div id="album-list" class="container-fluid d-flex ps-0  justify-content-between align-content-start">
                             <div class="album">
@@ -181,6 +195,7 @@
                                 <div id="author" class="text-white-50 text-center">Subtitle</div>                             
                             </div>
                         </div>
+                        <!-- /Recently Played -->
 
                         <!-- Creato per John Doe -->
                         <h2 class="text-white pt-3">Creato per John Doe</h2>
@@ -209,6 +224,7 @@
                                 <h5 id="title" class="text-white pt-3">Daily Mix 1</h5>
                             </div>
                         </div>
+                        <!-- /Creato per John Doe -->
 
                         <!-- Artisti più popolari -->
                         <h2 class="text-white pt-3">Artisti più popolari</h2>
@@ -237,26 +253,37 @@
                                 <h5 id="title" class="text-white pt-3">Ludovico Einaudi</h5>
                             </div>
                         </div>
+                        <!-- /Artisti più popolari -->
+
                     </div>
+                    <!-- Songs Menu -->
+
                 </div>
+                <!-- /Main Content -->
+                
             </main>    
 
+            <!-- Footer -->
             <footer>
+                <!-- Player -->
                 <div id="player" class="px-3 fixed-bottom d-flex justify-content-between align-items-center">
+                    <!-- Player Song Info -->
                     <div id="player_left" class="d-flex align-items-center">
                         <img src="./assets/img/sinister.jpeg" alt="">
                         <div class="ps-3">
                             <h6 class="text-white mb-0">Sinister</h6>
-                            <div class="text-white-50 ">Brano Nome</div>
+                            <div id="player_author" class="text-white-50 ">Brano Nome</div>
                         </div>
                         <div class="ps-3 d-flex flex-wrap  flex-md-nowrap align-items-start">
                             <i class="pe-2 text-white-50 far fa-heart"></i>
                             <i class="text-white-50 far fa-folder"></i>
                         </div>
-                            
                     </div>
+                    <!-- Player Song Info -->
+
+                    <!-- Player Controls -->
                     <div id="player_main" class="text-center">
-                        <div class="d-flex justify-content-center align-items-center">
+                        <div class="d-flex justify-content-center align-items-center pb-2">
                             <i class="fas fa-random"></i>
                             <i class="fas fa-step-backward"></i>
                             <i id="player_play" class="far fa-play-circle"></i>
@@ -273,22 +300,28 @@
                             <div class="text-white">4:35</div>
                         </div>
                     </div>
+                    <!-- /Player Controls -->
+
+                    <!-- Player Volume -->
                     <div id="player_right" class="d-flex justify-content-end align-items-center">
                         <div id="right_buttons" class="d-flex justify-content-around align-items-center pe-3">
                             <i class="me-1 text-white bi bi-list-ul"></i>
                             <i class="me-1 text-white fas fa-desktop"></i>
                             <i class="me-1 text-white fas fa-volume-up"></i>
                         </div>
-                        
                         <div id="volume_bar" class="bg-secondary">
                             <div id="progress_bar" class="bg-light ">
                                 <div id="progress_ball"></div>
                             </div>
                         </div>
                     </div>
+                    <!-- /Player Volume -->
+
                 </div>
+                <!-- /Player -->
             </footer>       
-        
+            <!-- /Footer -->
       </div>
+      <!-- /Spotify App -->
   </body>
 </html>
