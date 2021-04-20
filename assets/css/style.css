@@ -51,9 +51,10 @@ main{
     border-bottom: 1px solid white;
 }
 
-
 #download_app img{
     width: 15px;
+    filter: brightness(50%);
+
 } 
 
 #user_menu img{
@@ -68,14 +69,6 @@ main{
     padding-left: 29px!important;
     border-left: 3px solid lawngreen;
 }
-
-/* #bordo_verde{
-    position: absolute;
-    left: 0;
-    background-color: lawngreen;
-    height: 10px;
-    width: 10px;
-} */
 
 /* Main Content rules */
 #main_content{
@@ -95,6 +88,8 @@ main{
 
 #barra a{
     border: 1px solid white;
+    font-size: 0.9rem;
+    font-weight: 800;
 }
 
 #barra a:hover, #player_play:hover{
@@ -108,6 +103,7 @@ main{
 
 #songs ul a{
     text-transform: uppercase;
+    font-size: 0.8rem;
 }
 
 #songs ul li:first-child{
@@ -156,6 +152,10 @@ main{
 
 .nav-link img{
     width: 25px;
+    filter: brightness(50%)
+}
+#main_nav > .nav-link:first-of-type  img{
+    filter:brightness(100%);
 }
 
 .nav-link:hover, #download_app span:hover, #player_left i:hover{
@@ -164,6 +164,9 @@ main{
 }
 .nav-link:hover #add-playlist{
     background-color: white;
+}
+.nav-link:hover img, #download_app:hover img{
+    filter:brightness(100%)
 }
 
 /* Player rules */
@@ -195,12 +198,12 @@ main{
 }
 
 #player_main{
-    width: 50%;
+    width: 60%;
 }
 
 #player_bar{
     height: 5px;
-    width: 70%;
+    width: 40%;
     border-radius: 10px;
     position: relative;
 }
@@ -240,6 +243,10 @@ main{
 
 #player_main #player_play{
     font-size: 2rem;
+}
+
+#player_main > div > span{
+    font-size: 12px;
 }
 
 #player_right{
@@ -342,5 +349,11 @@ main{
 
     #download_app, #user_menu{
         justify-content: center;
+    }
+
+    #main_nav > a:first-of-type{
+        margin-left: 0!important;
+        padding-left: 0!important;
+        border-left: none;
     }
 }
